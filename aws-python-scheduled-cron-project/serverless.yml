@@ -13,6 +13,12 @@ package:
 provider:
   name: aws
   runtime: python3.9
+  environment:
+    START: 
+    END:
+    INSTANCES:
+      - 
+    REGION: us-east-1
 
 functions:
   rateHandler:
