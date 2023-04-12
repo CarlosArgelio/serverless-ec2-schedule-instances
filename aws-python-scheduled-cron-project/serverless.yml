@@ -4,6 +4,11 @@ service: aws-python-scheduled-cron-project
 
 frameworkVersion: '3'
 
+package: 
+  individually: true
+  patterns:
+    - "!*/**"
+    - "!**"
 
 provider:
   name: aws
@@ -12,6 +17,9 @@ provider:
 functions:
   rateHandler:
     handler: handler.run
+    package: 
+      patterns:
+        - "hardler.py"
     events:
       # Invoke Lambda function every minute
       - schedule: rate(1 minute)
